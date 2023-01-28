@@ -1,3 +1,14 @@
+/*
+=================================================================================================================
+; Title: Assignment 4.2 Pets-R-Us
+; Author: Shane Hingtgen
+; Bellevue University
+; Date: 01/28/23
+; Description: This is the site.css file for pets-r-us
+; Work Cited:
+    Web 330 HTML, CSS, and JavaScript Requirements
+=================================================================================================================
+*/
 * {
   margin: 0;
   padding: 0;
@@ -73,7 +84,7 @@ body {
 ul {
   list-style-type: none;
 }
-
+/* weekly section */
 .weekly-dog {
   text-align: center;
   border: solid #30292f;
@@ -91,6 +102,7 @@ ul {
 .weekly-img:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 4);
 }
+/* weekly section end */
 
 /* nav bar */
 .navbar {
@@ -163,9 +175,47 @@ footer {
   font-size: 10px;
   height: 20px;
 }
-.card-shadow {
-  list-style-type: none;
+
+/* form/btn style */
+.form {
+  display: inline-grid;
+  grid-template-columns: auto;
 }
-.card-shadow:hover {
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+.form-field {
+  padding: 20px;
 }
+
+.full-width {
+  width: 100%;
+}
+input {
+  width: 400px;
+  height: 40px;
+  text-align: center;
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  padding: 15px 32px;
+  color: black;
+  border-radius: 6px;
+}
+
+.btn-primary {
+  width: 100%;
+  background-color: #30292f;
+  color: #fffbfc;
+}
+
+.btn-primary:hover {
+  background-color: #413f54;
+}
+/* form/btn style end */
