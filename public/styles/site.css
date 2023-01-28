@@ -8,38 +8,72 @@
   overflow: hidden;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
+/* grid */
+.grid-header {
+  color: #fffbfc;
+  font-size: 40px;
+}
 .grid-container {
-  display: inline-grid;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #30292f;
+  padding: 10px;
 }
 
+.grid-item {
+  background-color: #fffbfc;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  list-style-type: none;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item:hover {
+  background-color: #413f54;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 5);
+  color: #fffbfc;
+}
+/* grid end */
+h3 {
+  font-size: 40px;
+}
 hr {
   border: 2px solid #30292f;
   width: 50%;
   margin-left: 25%;
   margin-right: 25%;
 }
+
 .card {
   padding: 20px;
   text-align: center;
   font-size: 20px;
 }
+
 .hero-content {
   font-size: 40px;
   text-align: center;
 }
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #fffbfc;
   color: #30292f;
 }
+
 .card-content {
   width: 100%;
   margin: 10px;
   padding: 10px;
 }
+
 ul {
   list-style-type: none;
 }
+
 .weekly-dog {
   text-align: center;
   border: solid #30292f;
@@ -47,6 +81,7 @@ ul {
   padding: 5px;
   margin: 10px;
 }
+
 .weekly-img {
   width: 20%;
   margin: 20px;
@@ -127,4 +162,10 @@ footer {
   color: #fffbfc;
   font-size: 10px;
   height: 20px;
+}
+.card-shadow {
+  list-style-type: none;
+}
+.card-shadow:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
