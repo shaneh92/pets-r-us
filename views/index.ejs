@@ -16,35 +16,127 @@
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link href="styles/site.css" type="text/css" rel="stylesheet" />
     <title><%= title %></title>
   </head>
   <body>
-    <header>
-      <nav>
-        <!-- nav bar -->
-        <div class="nav-menu">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="grooming">Grooming</a></li>
-            <li><a href="boarding">Boarding</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <div class="container">
+    <div class="hero-content">
       <h1 class="title">Pets-R-Us</h1>
       <div class="card-title"><%= pageTitle %></div>
-      <section class="locations">
+    </div>
+    <header>
+      <!-- nav bar -->
+      <nav class="navbar">
+        <a href="/">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Services
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="grooming">Grooming</a>
+            <a href="boarding">Boarding</a>
+            <a href="training">Training</a>
+          </div>
+        </div>
+        <a href="register">Register</a>
+        <a href="customers">Customers</a>
+        <a href="appointment">My Appointments</a>
+      </nav>
+    </header>
+    <div class="hero-background">
+      <img
+        src="images/puppy-run-cropped.jpg"
+        alt="Springer Spaniel"
+        class="hero-image"
+      />
+    </div>
+
+    <div class="container">
+      <div class="card">
+
+          <h3>Dog of the Week</h3>
+          <hr />
+          <img
+            src="images/bella.jpg"
+            alt="English Springer Spaniel"
+            title="Baby Bella"
+            class="weekly-img"
+          />       
+          <div class="weekly-dog">
+          <p><b>Name:</b> Bella</p>
+          <p><b>Age:</b> 6 years</p>
+          <p>
+            <b>Favorite activity:</b> Bella enjoys going on leash-less hikes
+            around the reservoir with her owner. Lots of things to sniff and
+            roll in.
+          </p>
+          <p><b>Friends:</b> Remi, George, Harper</p>
+          <p>
+            <b>Favorite Toy:</b> Bella enjoys chewing on piece of antler or
+            playing with her hedgehog until the squeaker is ripped out.
+          </p>
+          <p>
+            <b>Favorite Food:</b> Literally anything that her owner is eating.
+            She even pretends to eat what she doesn't like but will leave it on
+            the floor and beg for another.
+          </p>
+          <p>
+            <b>Dislikes:</b> Bella hates taking baths, but after a long walk she
+            usually finds some dead animals to roll in. She can be stinky, but
+            the stench is no match for our groomers!
+          </p>
+        </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="testimonials">
+          <h3>Customer Testimonials</h3>
+          <hr />
+          <div class="card-content">
+            <p>
+              "WOW! Pets-R-Us is so amazing! We love taking Fluffy there to get
+              groomed. She smells so nice when pick her up! Scheduling was so
+              convenient with their new website!"
+            </p>
+            <p>-Susan K</p>
+          </div>
+          <div class="card-content">
+            <p>"Everything my six cats will ever need."</p>
+            <p>-Stephanie R</p>
+          </div>
+          <div class="card-content">
+            <p>
+              "Pets-R-Us has friendly staff. The staff there is so appreciative
+              and you can generally feel the love and compassion for pets."
+            </p>
+            <p>-Steven S</p>
+          </div>
+          <div class="card-content">
+            <p>
+              "No need to go anywhere else, Pets-R-Us has all the pet related
+              items you need. We love to go shopping with our dog Rover."
+            </p>
+            <p>-Rodney D</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="locations">
         <h3>Store Locations</h3>
+        <hr />
         <p>Come visit us!</p>
         <ul>
           <li>123 Sesame St Tiffin, Iowa. Phone#: 123-456-7890</li>
           <li>556 Pet Lane North Liberty, Iowa. Phone#: 123-456-7891</li>
           <li>980 Animal Dr Iowa City, Iowa. Phone#: 123-456-7892</li>
         </ul>
-      </section>
+      </div>
+    </div>
 
-      <section class="hours card-content">
+    <div class="card">
+      <div class="hours card-content">
         <h3>Store Hours:</h3>
         <ul>
           <li>Monday: 7 AM - 7 PM</li>
@@ -55,45 +147,10 @@
           <li>Saturday: 7 AM - 4 PM</li>
           <li>Sunday: 7 AM - 1 PM</li>
         </ul>
-      </section>
-      <section class="weekly-dog card-content">
-        <h3>Dog of the Week</h3>
-        <p>Name: Bella</p>
-        <p>Age: 6 years</p>
-        <p>
-          Favorite activity: Bella enjoys going on leash-less hikes around the
-          reservoir with her owner. Lots of things to sniff and roll in.
-        </p>
-        <p>Friends: Remi, George, Harper</p>
-        <p>
-          Favorite Toy: Bella enjoys chewing on piece of antler or playing with
-          her hedgehog until the squeaker is ripped out.
-        </p>
-        <p>
-          Favorite Food: Literally anything that her owner is eating. She even
-          pretends to eat what she doesn't like but will leave it on the floor
-          and beg for another.
-        </p>
-        <p>
-          Dislikes: Bella hates taking baths, but after a long walk she usually
-          finds some dead animals to roll in. She can be stinky, but the stench
-          is no match for our groomers!
-        </p>
-      </section>
-      <section class="testimonials card-content">
-        <h3>Customer Testimonials</h3>
-        <p>
-          WOW! Pet-R-Us is so amazing! We love taking Fluffy there to get
-          groomed -Susan
-        </p>
-        <p>Everything my six cats will ever need. -Stephanie</p>
-        <p>Pet-R-Us has friendly staff, and they love animals. -Steven</p>
-        <p>
-          No need to go anywhere else, Pet-R-Us has all the pet related items
-          you need -Rodney
-        </p>
-      </section>
-      <section class="contact card-content">
+      </div>
+    </div>
+    <div class="card">
+      <div class="contact card-content">
         <h3>Contact Us</h3>
         <p>Please Contact us!</p>
         <ul>
@@ -101,8 +158,10 @@
           <li>Email: welovepets@petsrus.com</li>
           <li>Headquarter Address: 123 Sesame St Tiffin, Iowa</li>
         </ul>
-      </section>
+      </div>
     </div>
-    <footer></footer>
+    <footer>
+      <h4 class="footer-text">Photo by Pixabay</h4>
+    </footer>
   </body>
 </html>
