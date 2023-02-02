@@ -11,58 +11,20 @@
     Web 340 Pets-R-Us
 =================================================================================================================
 -->
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link
-      href="../public/styles/stylesheet.css"
-      type="text/css"
-      rel="stylesheet"
-    /> -->
-    <!--Google fonts 'Oswald' from previous class-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link href="styles/site.css" type="text/css" rel="stylesheet" />
-    <title><%= title %></title>
-  </head>
-  <body>
-    <div class="hero-content">
-      <h1 class="title">Pets-R-Us</h1>
-      <div class="card-title"><%= pageTitle %></div>
-    </div>
+<body>
     <header>
-      <!-- nav bar -->
-      <nav class="navbar">
-        <a href="/">Home</a>
-        <div class="dropdown">
-          <button class="dropbtn">
-            Services
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content">
-            <a href="grooming">Grooming</a>
-            <a href="boarding">Boarding</a>
-            <a href="training">Training</a>
-          </div>
-        </div>
-        <a href="register">Register</a>
-        <a href="customers">Customers</a>
-        <a href="appointment">My Appointments</a>
-      </nav>
+      <%- include('./_header')%>
     </header>
     <div class="hero-background">
+    <figure>
       <img
         src="images/puppy-run-cropped.jpg"
-        alt="Springer Spaniel"
+        alt="Pets-R-Us Puppy running"
         class="hero-image"
+        title="Photo by Pixabay: https://www.pexels.com/photo/action-adorable-animal-beautiful-264005/"
       />
+      <figcaption>Photo by Pixabay: https://www.pexels.com/photo/action-adorable-animal-beautiful-264005/</figcaption> <!--currently does not show up on web page-->
+    </figure>
     </div>
 <!-- dog of the week -->
     <div class="container">
@@ -70,12 +32,15 @@
 
           <h3>Dog of the Week</h3>
           <hr />
+          <figure>
           <img
             src="images/bella.jpg"
             alt="English Springer Spaniel"
             title="Baby Bella"
             class="weekly-img"
-          />       
+          />  
+          <figcaption>Baby Bella</figcaption>   
+          </figure>
           <div class="weekly-dog">
           <p><b>Name:</b> Bella</p>
           <p><b>Age:</b> 6 years</p>
@@ -188,8 +153,7 @@
       </div>
     </div>
     <footer>
-      <!-- credit to hero photo -->
-      <h4 class="footer-text">Photo by Pixabay</h4>
+      <%- include('./_footer')%>
     </footer>
   </body>
 </html>
