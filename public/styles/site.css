@@ -32,12 +32,14 @@
 .grid-header {
   color: #fffbfc;
   font-size: 40px;
+  text-align: center;
 }
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
   background-color: #30292f;
   padding: 10px;
+  margin: 20px;
 }
 
 .grid-item {
@@ -51,6 +53,33 @@
 }
 
 .grid-item:hover {
+  background-color: #413f54;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 5);
+  color: #fffbfc;
+}
+/* the size change so had to readjust */
+.grid-container-boarding {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #30292f;
+  padding: 10px;
+  margin-left: 200px;
+  margin-right: 200px;
+  text-align: center;
+}
+
+.grid-item-boarding {
+  background-color: #fffbfc;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  list-style-type: none;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  margin-left: 100px;
+}
+
+.grid-item-boarding:hover {
   background-color: #413f54;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 5);
   color: #fffbfc;
@@ -222,3 +251,13 @@ input {
   background-color: #413f54;
 }
 /* form/btn style end */
+
+.img-trainer {
+  width: 400px;
+  margin: 15px;
+}
+
+figcaption {
+  margin: 5px;
+  margin-bottom: 10px;
+}
