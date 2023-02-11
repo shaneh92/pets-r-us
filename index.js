@@ -18,6 +18,8 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+const mongoose = require("mongoose");
+const Customer = require("./models/customer"); //Our model we created
 
 //set views and view engine as ejs
 app.set("views", path.join(__dirname, "views"));
@@ -28,7 +30,25 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 app.use("/site", express.static(path.join(__dirname, "public/stylesheets")));
 
-const PORT = process.env.PORT || 3000; // set the port up
+//Important in order to post information to db from our form
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+const CONN =
+  "mongodb+srv://web340_admin:123@bellevueuniversity.ut5xprd.mongodb.net/web340DB"; //Our MongDB Server
+const PORT = process.env.PORT || 4000; // set the port up
+
+//Connection to MongoDB
+mongoose
+  .connect(CONN)
+  .then(() => {
+    console.log(
+      "Connection to MongoDB database was successful\n  If you see this message it means you were able to connect to your MongoDB Atlas cluster"
+    ); //This will verify we have connect to server
+  })
+  .catch((err) => {
+    console.log("MongoDB Error: " + err.message); //Will tell us we did not connect to server
+  });
 
 // These are the web pages connected
 app.get("/", (req, res) => {
@@ -66,8 +86,8 @@ app.get("/register", (req, res) => {
   });
 });
 
-app.get("/customers", (req, res) => {
-  res.render("customers", {
+app.get("/customer", (req, res) => {
+  res.render("customer", {
     title: "Pets-R-Us: Customer List",
     pageTitle: "Pets-R-Us Customer List",
   });
@@ -80,5 +100,31 @@ app.get("/appointment", (req, res) => {
   });
 });
 
-//Listen on port 3000
-app.listen(PORT, () => console.info(`Listening on port ${PORT}`));
+app.post("/customers", (req, res, next) => {
+  console.log(req.body);
+  console.log(req.body.customerId);
+  console.log(req.body.email);
+  const newCustomer = new Customer({
+    customerId: req.body.customerId,
+    email: req.body.email,
+  });
+
+  console.log(newCustomer); //Allows us to see what we just posted from our form
+
+  //this creates the information and adds it then returns you to the index page
+  Customer.create(newCustomer, function (err, customer) {
+    if (err) {
+      console.log(err);
+      next(err);
+    } else {
+      res.render("index", {
+        title: "Pets-R-Us: Landing",
+        pageTitle: "Where pets are happy and healthy",
+      });
+    }
+  });
+});
+
+app.listen(PORT, () => {
+  console.log("Application started and listening on PORT " + PORT);
+});

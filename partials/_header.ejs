@@ -1,0 +1,59 @@
+<!--
+=================================================================================================================
+; Title: Assignment 5.2 Pets-R-Us
+; Author: Shane Hingtgen
+; Bellevue University
+; Date: 01/30/23
+; Description: In this assignment we create a website and connect it with express, creating a header and a footer
+; Work Cited:
+    Web 330 HTML, CSS, and JavaScript Requirements
+    Web 340 Assign 4
+    Web 340 Assign 5
+    Web 340 Pets-R-Us
+=================================================================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link
+      href="../public/styles/stylesheet.css"
+      type="text/css"
+      rel="stylesheet"
+    /> -->
+    <!--Google fonts 'Oswald' from previous class-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles/site.css" type="text/css" rel="stylesheet" />
+    <title><%= title %></title>
+  </head>
+  <!-- Webpage title -->
+  <div class="hero-content">
+    <h1 class="title">Pets-R-Us</h1>
+    <div class="card-title"><%= pageTitle %></div>
+  </div>
+  <!-- nav bar -->
+  <nav class="navbar">
+    <a href="/">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn">
+        Services
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="grooming">Grooming</a>
+        <a href="boarding">Boarding</a>
+        <a href="training">Training</a>
+      </div>
+    </div>
+    <a href="register">Register</a>
+    <a href="customer">Customers</a>
+    <a href="appointment">My Appointments</a>
+  </nav>
+</html>
