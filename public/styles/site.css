@@ -95,6 +95,13 @@ hr {
   margin-right: 25%;
 }
 
+.card-title {
+  text-align: center;
+  font-size: 2em;
+  color: #30292f;
+  font-weight: 400;
+}
+
 .card {
   padding: 20px;
   text-align: center;
@@ -260,4 +267,42 @@ input {
 figcaption {
   margin: 5px;
   margin-bottom: 10px;
+}
+
+/* Table styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #30292f;
+  color: white;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table tr:hover {
+  background-color: #413f54;
+  color: white;
+  cursor: pointer;
+}
+
+/* Table styles end */
+
+/* anchor tags styles */
+a {
+  text-decoration: none;
+  color: #244f26;
+}
+a:hover {
+  color: #ddd5d0;
 }

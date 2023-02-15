@@ -8,6 +8,8 @@
 ; Work Cited: 
     Web 330 HTML, CSS, and JavaScript Requirements
     Web 340 Assign 4
+    Web 340 Assign 6
+    Web 340 Assign 7
     Web 340 Assign Pets-R-Us
     Web 340 Power points
     Node.js Setup with express https://www.youtube.com/watch?v=A01KtJTv1oc&embeds_euri=https%3A%2F%2Fcyberactive.bellevue.edu%2F&source_ve_path=MjM4NTE&feature=emb_title
