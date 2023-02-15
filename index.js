@@ -102,6 +102,7 @@ app.get("/appointment", (req, res) => {
   });
 });
 
+// this will post our information we submit on the form into mongoDB
 app.post("/customers", (req, res, next) => {
   console.log(req.body);
   console.log(req.body.customerId);
@@ -127,6 +128,7 @@ app.post("/customers", (req, res, next) => {
   });
 });
 
+// gets our form data and sends us to the webpage customerlist
 app.get("/customers", (req, res) => {
   Customer.find({}, function (err, customer) {
     if (err) {
