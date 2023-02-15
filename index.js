@@ -19,7 +19,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const mongoose = require("mongoose");
-const Customer = require("./models/customer"); //Our model we created
+const Customer = require("./models/customer.js"); //Our model we created
 
 //set views and view engine as ejs
 app.set("views", path.join(__dirname, "views"));
@@ -86,8 +86,8 @@ app.get("/register", (req, res) => {
   });
 });
 
-app.get("/customer", (req, res) => {
-  res.render("customer", {
+app.get("/customerlist", (req, res) => {
+  res.render("customerlist", {
     title: "Pets-R-Us: Customer List",
     pageTitle: "Pets-R-Us Customer List",
   });
@@ -120,6 +120,21 @@ app.post("/customers", (req, res, next) => {
       res.render("index", {
         title: "Pets-R-Us: Landing",
         pageTitle: "Where pets are happy and healthy",
+      });
+    }
+  });
+});
+
+app.get("/customers", (req, res) => {
+  Customer.find({}, function (err, customer) {
+    if (err) {
+      console.log(err);
+      next(err);
+    } else {
+      res.render("customerlist", {
+        title: "Pets-R-Us: Customer List",
+        pageTitle: "Pets-R-Us Customer List",
+        customer: customer,
       });
     }
   });

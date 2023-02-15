@@ -1,0 +1,63 @@
+<!--
+=================================================================================================================
+; Title: Assignment 4.2 Pets-R-Us
+; Author: Shane Hingtgen
+; Bellevue University
+; Date: 01/28/23
+; Description: In this assignment we create a website and connect it with express
+; Work Cited:
+    Web 330 HTML, CSS, and JavaScript Requirements
+    Web 340 Assign 4
+    Web 340 Pets-R-Us
+=================================================================================================================
+-->
+
+  <body>
+    <header>
+      <%- include('../partials/_header')%>
+    </header>
+    <div class="hero-background">
+      <img
+        src="images/puppy-run-cropped.jpg"
+        alt="Springer Spaniel"
+        class="hero-image"
+      />
+    </div>
+    <div class="container">
+      <div class="card center-div">
+          <div class="card-title">
+              Customer List
+          </div>
+  
+          <div class="card-content">
+              <% if(customer.length > 0) { %>
+              <table class="table">
+                  <tr>
+                      <th>Customer Id</th>
+                      <th>Email</th>
+                  </tr>
+                  <tbody>
+                  <% customer.forEach(function(customer) { %>
+                  <tr>
+                      <td>
+                          <%= customer.customerId %>
+                          <%= customer.email %>
+                      </td>
+                      <td>
+                          <a href="#">DELETE</a>
+                      </td>
+                  </tr>
+                  <% }) %>
+                  </tbody>
+              </table>
+              <% } else { %>
+              <h3>Customers have not been added to the MongoDB database.  Try adding some!</h3>
+              <% } %>
+          </div>
+      </div>
+    </div>
+    <footer>
+      <%- include('../partials/_footer')%>
+    </footer>
+  </body>
+</html>
