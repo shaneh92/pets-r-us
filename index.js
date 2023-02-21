@@ -12,6 +12,7 @@
     Web 340 Assign 7
     Web 340 Assign Pets-R-Us
     Web 340 Power points
+    Web 340 GitHub https://github.com/buwebdev/web-340/tree/master/week-7/fms
     Node.js Setup with express https://www.youtube.com/watch?v=A01KtJTv1oc&embeds_euri=https%3A%2F%2Fcyberactive.bellevue.edu%2F&source_ve_path=MjM4NTE&feature=emb_title
 =================================================================================================================
 */
@@ -128,7 +129,7 @@ app.post("/customers", (req, res, next) => {
   });
 });
 
-// gets our form data and sends us to the webpage customerlist
+//Notice: the name /customers is used in 4 places, once in the header, one in our form in register and the other two app.post and the app.get below for the .find function it seems like this takes us to the data thats on the web page
 app.get("/customers", (req, res) => {
   Customer.find({}, function (err, customer) {
     if (err) {
