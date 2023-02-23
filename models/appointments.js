@@ -1,13 +1,13 @@
 /*
 ==============================================================================
-; Title: customer.js Pets-R-Us model
+; Title: appointments.js Pets-R-Us model
 ; Author: Shane Hingtgen
 ; Bellevue University
-; Date: 02/20/23
-; Description: This is the customer model for our database
+; Date: 02/22/23
+; Description: This is the appointments model for our database
 ; Work Cited: 
     Web 330 HTML, CSS, and JavaScript Requirements
-    Web 340 Assign 7
+    Web 340 Assign 8
     Web 340 Assign Pets-R-Us
     Web 340 Power points
     Web 340 GitHub https://github.com/buwebdev/web-340/tree/master/week-7/fms
@@ -22,11 +22,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // defines our schema object
-const customerSchema = new Schema({
+const appointmentSchema = new Schema({
   // our object names, what type they are, unique and required for the DB
-  customerId: { type: String, required: true, unique: true },
+  userName: { type: String, required: true, unique: true },
+  firstName: { type: String, required: true, unique: true },
+  lastName: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
+  service: { type: String, required: true, unique: true },
 });
 
 // exporting our schema
-module.exports = mongoose.model("Customer", customerSchema);
+module.exports = mongoose.model("Appointment", appointmentSchema);

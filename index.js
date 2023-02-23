@@ -22,7 +22,10 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const mongoose = require("mongoose");
-const Customer = require("./models/customer.js"); //Our model we created
+const fs = require("fs");
+
+const Customer = require("./models/customer.js"); //Our customer model we created
+const Appointment = require("./models/appointments.js"); //Our appointment model we created
 
 //set views and view engine as ejs
 app.set("views", path.join(__dirname, "views"));
@@ -100,6 +103,51 @@ app.get("/appointment", (req, res) => {
   res.render("appointment", {
     title: "Pets-R-Us: My Appointments",
     pageTitle: "Pets-R-Us My Appointments",
+  });
+});
+
+// this will load our JSON file
+app.get("/appointments", (req, res) => {
+  let jsonFile = fs.readFileSync("./public/data/services.json");
+  let services = JSON.parse(jsonFile);
+
+  console.log(services);
+
+  res.render("appointment", {
+    title: "Pets-R-Us: My Appointments",
+    pageTitle: "Pets-R-Us My Appointments",
+    services: services,
+  });
+});
+
+// this will post our information we submit on the form into mongoDB
+app.post("/appointments", (req, res, next) => {
+  // console.log(req.body);
+  // console.log(req.body.firstName);
+  // console.log(req.body.lastName);
+  // console.log(req.body.email);
+  // console.log(req.body.service);
+  const newAppointment = new Appointment({
+    userName: req.body.userName,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    service: req.body.service,
+  });
+
+  console.log(newAppointment); //Allows us to see what we just posted from our form
+
+  //this creates the information and adds it then returns you to the index page
+  Appointment.create(newAppointment, function (err, appointment) {
+    if (err) {
+      console.log(err);
+      next(err);
+    } else {
+      res.render("index", {
+        title: "Pets-R-Us: Landing",
+        pageTitle: "Where pets are happy and healthy",
+      });
+    }
   });
 });
 
