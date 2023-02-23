@@ -10,6 +10,7 @@
     Web 340 Assign 4
     Web 340 Assign 6
     Web 340 Assign 7
+    Web 340 Assign 8
     Web 340 Assign Pets-R-Us
     Web 340 Power points
     Web 340 GitHub https://github.com/buwebdev/web-340/tree/master/week-7/fms
