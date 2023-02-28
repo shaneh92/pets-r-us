@@ -152,6 +152,24 @@ app.post("/appointments", (req, res, next) => {
   });
 });
 
+app.get("/my-appointment", (req, res) => {
+  res.render("my-appointment", {
+    title: "Pets-R-Us: My Appointment",
+    pageTitle: "Pets-R-Us My Appointment",
+  });
+});
+
+app.get("/api/appointments/:email", async (req, res, next) => {
+  Appointment.find({ email: req.params.email }, function (err, appointments) {
+    if (err) {
+      console.log(err);
+      next(err);
+    } else {
+      res.json(appointments);
+    }
+  });
+});
+
 // this will post our information we submit on the form into mongoDB
 app.post("/customers", (req, res, next) => {
   console.log(req.body);

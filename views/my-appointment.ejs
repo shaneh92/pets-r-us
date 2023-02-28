@@ -1,0 +1,72 @@
+<!--
+=================================================================================================================
+; Title: Assignment 9.2 Pets-R-Us
+; Author: Shane Hingtgen
+; Bellevue University
+; Date: 02/27/23
+; Description: In this assignment we create node.js api and use fetch api to display results into an HTML div. also needs an onclick event for appointment lookup
+; Work Cited:
+    Web 330 HTML, CSS, and JavaScript Requirements
+    Web 340 Assign 9
+    Web 340 Pets-R-Us
+    Web 340 PowerPoints
+=================================================================================================================
+-->
+<header><%- include('../partials/_header')%></header>
+<div class="hero-background">
+  <img
+    src="images/schedule-cropped.jpg"
+    alt="Springer Spaniel"
+    class="hero-image"
+  />
+</div>
+<section>
+    <br />
+    <div class="grid-container-boarding" style="margin-left: 35%; margin-right: 40%;">
+        <div class="card">
+            <h3 class="grid-header">Search Appointment</h3>
+            <div class="card-content">
+                <div class="form">
+                    <div class="grid-item">
+                        <div class="form-field">
+                            <label for="email">Email</label><br />
+                            <input type="email" class="input full-width" name="email" id="email" auto focus required>
+                        </div>
+
+                        <div class="form-field">
+                            <input type="submit" value="Search" id="search" class="btn btn-primary full-width">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="container">
+            <div class="card center-div" id="appointments">
+            </div>
+            </div>
+        </div>
+
+
+  </section>
+<footer><%- include('../partials/_footer')%></footer>
+</body>
+<script>
+    document.getElementById('search').onclick = function() {
+      const email = document.getElementById('email').value;
+      fetch('/api/appointments/' + email)
+              .then(res => res.json())
+              .then(data => {
+                let tableString = `<br /><div class="card-title">My Appointments</div><table id="appointments" class="table""><div class="card-content"><table class="table"><tr><th>First name</th><th>Last name</th><th>email</th></tr>`;
+                for (let appointment of data) {
+                  tableString += `<tr><td>${appointment.firstName}</td><td>${appointment.lastName}</td><td>${appointment.email}</td></tr>`;
+                }
+                tableString += `</table></div>`;
+                document.getElementById('appointments').innerHTML = tableString;
+              });
+    }
+  </script>
+</html>
