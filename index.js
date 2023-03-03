@@ -159,6 +159,7 @@ app.get("/my-appointment", (req, res) => {
   });
 });
 
+//pulls the email information from appointments db
 app.get("/api/appointments/:email", async (req, res, next) => {
   Appointment.find({ email: req.params.email }, function (err, appointments) {
     if (err) {

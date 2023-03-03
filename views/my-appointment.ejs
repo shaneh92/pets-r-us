@@ -28,11 +28,12 @@
             <div class="card-content">
                 <div class="form">
                     <div class="grid-item">
+                      <!-- form input for email, which will be used to extract the information in the script -->
                         <div class="form-field">
                             <label for="email">Email</label><br />
                             <input type="email" class="input full-width" name="email" id="email" placeholder="Email" autofocus required>
                         </div>
-
+                        <!-- our search button -->
                         <div class="form-field">
                             <input type="submit" value="Search" id="search" class="btn btn-primary full-width">
                         </div>
@@ -46,6 +47,7 @@
 
         <div class="container">
             <div class="card center-div" id="appointments">
+                      <!-- data displayed here -->
             </div>
             </div>
         </div>
@@ -55,16 +57,22 @@
 <footer><%- include('../partials/_footer')%></footer>
 </body>
 <script>
+  // getting the search id
     document.getElementById('search').onclick = function() {
+      // setting constant email for the id email
       const email = document.getElementById('email').value;
+      // fetching the DB
       fetch('/api/appointments/' + email)
               .then(res => res.json())
               .then(data => {
-                let tableString = `<br /><div class="card-title">My Appointments</div><table id="appointments" class="table""><div class="card-content"><table class="table"><tr><th>First name</th><th>Last name</th><th>email</th></tr>`;
+                // these create the header and the rows for the data
+                let tableString = `<br /><div class="card-title">My Appointments</div><table id="appointments" class="table""><div class="card-content"><table class="table"><tr><th>First name</th><th>Last name</th><th>Email</th><th>Service</th></tr>`;
                 for (let appointment of data) {
-                  tableString += `<tr><td>${appointment.firstName}</td><td>${appointment.lastName}</td><td>${appointment.email}</td></tr>`;
+                  tableString += `<tr><td>${appointment.firstName}</td><td>${appointment.lastName}</td><td>${appointment.email}</td><td>${appointment.service}</td></tr>`;
                 }
+                // ending the table and div
                 tableString += `</table></div>`;
+                // sends the data to the correct id to be displayed
                 document.getElementById('appointments').innerHTML = tableString;
               });
     }
